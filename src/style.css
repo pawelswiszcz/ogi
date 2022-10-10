@@ -1,0 +1,32 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  background-color: transparent;
+  /*background-color: black;*/
+
+  background-image: url('../src/assets/icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+a {
+  color: black;
+}
+
+a:hover {}
+
+.card {
+  backdrop-filter: blur(3px) saturate(144%);
+  -webkit-backdrop-filter: blur(3px) saturate(144%);
+  background-color: rgba(255, 255, 255, 0.42);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.color-white {
+  color: white;
+}
