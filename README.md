@@ -28,7 +28,7 @@ Issues:
 - Create new Issues [here](https://github.com/pawelswiszcz/ogi/issues)
 
 Releases:
-- [0.0.1](https://github.com/pawelswiszcz/ogi/releases)
+- [here](https://github.com/pawelswiszcz/ogi/releases)
 
 # Stack: Tauri + Next.js + Typescript
 
