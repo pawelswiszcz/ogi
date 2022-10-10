@@ -8,6 +8,7 @@ struct Device {
     pub id: String,
     pub name: String,
     pub resolutions: Vec<Resolution>,
+    pub full_info: String,
 }
 
 #[derive(Debug)]
@@ -17,10 +18,36 @@ struct Resolution {
 }
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-//#[tauri::command]
-//fn greet(name: &str) -> String {
-//    format!("Hello, {}! You've been greeted from Rust!", name)
-//}
+#[tauri::command]
+fn get_device_info(device_name: &str) -> String {
+    let output = Command::new("ratbagctl")
+        .arg(device_name)
+        .arg("info")
+        // Tell the OS to record the command's output
+        .stdout(Stdio::piped())
+        // execute the command, wait for it to complete, then capture the output
+        .output()
+        // Blow up if the OS was unable to start the program
+        .unwrap();
+
+    // extract the raw bytes that we captured and interpret them as a string
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    return stdout;
+}
+#[tauri::command]
+fn get_all_devices_to_view() -> String {
+    //device = "MSG FROM RUST";
+
+    let all_devices_dist = get_all_devices();
+
+    let mut result = String::new();
+
+    for i in &all_devices_dist {
+        result = result + i.full_info.as_str();
+    }
+
+    return result;
+}
 
 use std::process::{Command, Stdio};
 
@@ -134,10 +161,13 @@ fn get_all_devices() -> Vec<Device> {
             });
         }
 
+        let full_info = get_device_info(&name.to_string());
+
         let device = Device {
             id,
             name,
             resolutions,
+            full_info,
         };
 
         devices.push(device);
@@ -243,7 +273,7 @@ fn main() {
             }
             _ => {}
         })
-        //.invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![get_all_devices_to_view])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

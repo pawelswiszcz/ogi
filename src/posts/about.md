@@ -3,6 +3,8 @@ title: 'Ogi - ratbagctl Try Icon'
 date: '2022-10-10'
 ---
 
-Paweł Świszcz
-GitHub https://github.com/pawelswiszcz/
+# OGI
+
+OGI is the `ratbagctl` try icon to change the devices resolution. 
+
 	

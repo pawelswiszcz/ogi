@@ -1,9 +1,13 @@
 # OGI
 
-ratbagctl try icon
+OGI is the `ratbagctl` try icon to change the devices resolution. 
+
+[<img src="src/assets/preview.png" height="100">]
 
 # Installation 
 
+Ogi's dependencies: 
+- [libratbag](https://github.com/libratbag/libratbag)
 
 Dev build: 
 
@@ -16,11 +20,15 @@ Production build:
 - `npm i`
 - `npm run package`
 - `npm run tauri build`
-- Go to `src-tauri/target/release/bundle` to Run the application
+- Go to `src-tauri/target/release`
+- Run the application `./ogi`
 
 
 Issues: 
+- Create new Issues [here](https://github.com/pawelswiszcz/ogi/issues)
 
+Releases:
+- [0.0.1](https://github.com/pawelswiszcz/ogi/releases)
 
 # Stack: Tauri + Next.js + Typescript
 
