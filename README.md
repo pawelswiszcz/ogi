@@ -18,7 +18,6 @@ Dev build:
 Production build: 
 
 - `npm i`
-- `npm run package`
 - `npm run tauri build`
 - Go to `src-tauri/target/release`
 - Run the application `./ogi`
