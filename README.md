@@ -1,6 +1,6 @@
 # OGI
 
-OGI is the `ratbagctl` try icon to change the devices resolution. 
+OGI is the `ratbagctl` tray icon to change the devices resolution. 
 
 <img src="src/assets/preview.png" height="100">
 
