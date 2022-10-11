@@ -12,7 +12,6 @@ Ogi's dependencies:
 Dev build: 
 
 - `npm i`
-- `npm run package`
 - `npm run tauri dev`
 
 Production build: 
