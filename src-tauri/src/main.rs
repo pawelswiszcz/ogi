@@ -150,11 +150,12 @@ fn get_all_devices() -> Vec<Device> {
         let name = device_row
             .get(dot_index.unwrap() + 3..)
             .unwrap()
+            .trim()
             .to_string();
 
         let mut resolutions: Vec<Resolution> = Vec::new();
         for i in 0..5 {
-            let dev_res_value = get_resolution(&name.to_string(), &i.to_string());
+            let dev_res_value = get_resolution(&id.to_string(), &i.to_string());
             resolutions.push(Resolution {
                 value: dev_res_value,
                 index: i,
@@ -198,6 +199,7 @@ fn main() {
             let res_item_right = res_item
                 .get(dot_index.unwrap() + 2..)
                 .unwrap()
+                .trim()
                 .to_string()
                 .replace(" (active)", "");
             let res_item_right_id = f.index.to_string() + "_" + i.id.as_str();
